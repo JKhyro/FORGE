@@ -24,13 +24,27 @@ Boundary rules:
 - SYMBIOSIS owns upstream runtime contracts for routed agent execution
 - FORGE stays focused on the code/file workspace rather than absorbing project management, communications, or forge governance
 
+## Implementation direction
+
+FORGE is now Native C first.
+
+Implementation rules:
+- Native C is the default language for core workspace logic, child programs, review/note/task behavior, interop ownership, and packaging logic.
+- Avalonia may be used for desktop host or shell surfaces when a managed UI layer is necessary, but it should sit over Native C components rather than replacing them.
+- Native C interop must stay explicit and narrow, with stable ABI boundaries between Native C components and any managed host layer.
+- C# is allowed only where necessary for Avalonia, thin bootstrap layers, or platform integration that is materially simpler in .NET.
+- Core workspace behavior should not drift into C# unless a narrow exception is documented first.
+
 ## First execution wave
 
 The first meaningful delivery wave for FORGE is:
-- source browsing baseline
-- editing baseline
-- note-overlay baseline
+- native C source browsing baseline
+- native C editing baseline
+- native C note-overlay baseline
 - task-hook contract into upstream systems
+- explicit Avalonia host boundary only where needed
 - integration contract clarity with VECTOR and ANVIL
 
 This wave should produce one narrow vertical slice that proves the workspace boundary without widening into full project-management or forge-platform ownership.
+
+See [ARCHITECTURE.md](/C:/KHYRON/apps/FORGE/ARCHITECTURE.md) for the current Native C and interop posture.
