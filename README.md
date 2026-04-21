@@ -24,6 +24,13 @@ Boundary rules:
 - SYMBIOSIS owns upstream runtime contracts for routed agent execution
 - FORGE stays focused on the code/file workspace rather than absorbing project management, communications, or forge governance
 
+## Runtime base: Hermes-derived FURYOKU
+
+The live agent runtime that reaches FORGE's workspace through the SYMBIOSIS routing contract has moved from OpenClaw to Hermes Agent. Hermes-derived FURYOKU is the runtime spine for the 7-Symbiote swarm; OpenClaw is demoted to a feature-harvest lane, not a host runtime. FORGE's code/file workspace boundary is unchanged by the move. Anchor is universalized across `JKhyro` Project #20 (FURYOKU) and Project #10 (SYMBIOSIS).
+
+- Authoritative migration plan: [`FURYOKU/docs/hermes-furyoku-migration.md`](https://github.com/JKhyro/FURYOKU/blob/main/docs/hermes-furyoku-migration.md)
+- OpenClaw carryover rules: [`FURYOKU/docs/openclaw-carryover-inventory.md`](https://github.com/JKhyro/FURYOKU/blob/main/docs/openclaw-carryover-inventory.md)
+
 ## Implementation direction
 
 FORGE is now Native C first.
